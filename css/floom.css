@@ -1,0 +1,62 @@
+#blinds-cont {
+	background: black url(../images/slide/bg.png) 0 0 no-repeat;
+	width: 655px;
+	height: 229px;
+	margin: 0 !important;
+	padding: 11px 0 0 0;
+	-moz-box-shadow: 0 0 40px #000;
+	-webkit-box-shadow: 0 0 40px #000;
+	font-family: "Georgia", "Arial Narrow", "Arial", sans-serif;
+	z-index:-1;
+	display:block;
+	position:absolute;
+}
+
+#blinds {
+	width:630px;
+	height:200px;
+	margin: 0 auto;
+	background: url(../images/slide/spinner.gif) 50% no-repeat;
+}
+
+.floom_container {
+	overflow: hidden;
+	border-top: solid 1px #666;
+	border-bottom: solid 1px #fff;
+}
+
+.floom_progressbar {
+	height: 3px;
+	background: #131718;
+	width: 0;
+	position: relative;
+	top: 2px;
+	z-index: 1000;
+	border-bottom: solid 1px #fff;
+	font-size: 1px;
+}
+
+.floom_slice {
+	z-index: 10;
+	position: relative;
+}
+
+	
+.floom_vertical {
+	float: left;
+}
+
+.floom_horizontal {
+	
+}
+
+.floom_caption {
+	width: 100%;
+	position: relative;
+	top:2px;
+	text-align: center;
+	font-size: 1.0em;
+	color: #333;
+	text-shadow: 0 1px 0 #fff;
+	font-style: italic;
+}

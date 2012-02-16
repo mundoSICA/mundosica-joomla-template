@@ -91,21 +91,12 @@ fieldset
 	position:absolute;
 }
 #all #header
-{padding-top:110px;
-width:1050px;
-display:block;
-}
-#logoheader
 {
-	color:#fff;
-	height:240px;
-	margin:0 !important;
-	width:1000px;
-	float:rigth;
-	z-index:-1;
+	padding-top:110px;
+	width:1050px;
 	display:block;
-	position:absolute;
 }
+
 div.comentarios_clientes{
 	width:360px;
 	height:200px;

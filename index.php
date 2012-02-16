@@ -1,9 +1,9 @@
 <?php
 /**
- * @package                Joomla.Site
- * @subpackage	Templates.sica
- * @copyright        Copyright (C) 2005 - 2012 Open Source Matters, Inc. All rights reserved.
- * @license                GNU General Public License version 2 or later; see LICENSE.txt
+ * @package          Joomla.Site
+ * @subpackage       Templates.sica
+ * @copyright        Copyright (C) 2005 - 2012 SICÁ (tm).
+ * @license          GNU General Public License version 2 or later; see LICENSE.txt
  */
 
 // No direct access.
@@ -29,11 +29,15 @@ $doc				= JFactory::getDocument();
 $templateparams     = $app->getTemplate(true)->params;
 
 $doc->addScript($this->baseurl.'/templates/'.$this->template.'/javascript/md_stylechanger.js', 'text/javascript', true);
+#slide
+$doc->addScript($this->baseurl.'/templates/'.$this->template.'/javascript/floom.js', 'text/javascript', true);
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="<?php echo $this->language; ?>" lang="<?php echo $this->language; ?>" dir="<?php echo $this->direction; ?>" >
         <head>
                 <jdoc:include type="head" />
+                <link rel="stylesheet" href="<?php echo $this->baseurl ?>/templates/<?php echo $this->template; ?>/css/floom.css" type="text/css"/>
+                
                 <link rel="stylesheet" href="<?php echo $this->baseurl ?>/templates/system/css/system.css" type="text/css" />
                 <link rel="stylesheet" href="<?php echo $this->baseurl ?>/templates/<?php echo $this->template; ?>/css/position.css" type="text/css" media="screen,projection" />
                 <link rel="stylesheet" href="<?php echo $this->baseurl ?>/templates/<?php echo $this->template; ?>/css/layout.css" type="text/css" media="screen,projection" />
@@ -103,8 +107,34 @@ $doc->addScript($this->baseurl.'/templates/'.$this->template.'/javascript/md_sty
                         var resetTitle='<?php echo JText::_('TPL_SICA_REVERT_STYLES_TO_DEFAULT'); ?>';
                         var smallerTitle='<?php echo JText::_('TPL_SICA_DECREASE_SIZE'); ?>';
                 </script>
+<?php
+$images_slides = array(
+	array(
+		'image' => 'banner_pagina_principal.png',
+		'caption' => 'Trabajo y diseño artesanales.'
+	),
+	array(
+		'image' => 'el-cacho-ninja-katana.png',
+		'caption' => 'Agilidad en el desarrollo web!.'
+	),
+	array(
+		'image' => 'libertad.png',
+		'caption' => 'Tecnologia en libertad tecnologia para todos!.'
+	)
+);
+?>
 <script language="Javascript"  type="text/javascript">
 	window.addEvent('domready', function() {
+//slide section.
+	var slides = <?php echo json_encode($images_slides). ";\n"; ?>;
+	
+			$('blinds').floom(slides, {
+				slidesBase: '<?php echo $this->baseurl ?>/templates/<?php echo $this->template; ?>/images/slide/',
+				sliceFxIn: {
+					left: [10, 0]
+				}
+			});
+//end slide section.
 
   var status = {
     'true': 'open',
@@ -112,19 +142,15 @@ $doc->addScript($this->baseurl.'/templates/'.$this->template.'/javascript/md_sty
   };
 
   // -- vertical
-
   var myVerticalSlide = new Fx.Slide('vertical_slide');
-
   $('v_slidein').addEvent('click', function(event){
     event.stop();
     myVerticalSlide.slideIn();
   });
-
   $('v_slideout').addEvent('click', function(event){
     event.stop();
     myVerticalSlide.slideOut();
   });
-
   $('v_toggle').addEvent('click', function(event){
     event.stop();
     myVerticalSlide.toggle();
@@ -203,9 +229,12 @@ $doc->addScript($this->baseurl.'/templates/'.$this->template.'/javascript/md_sty
                                         <span class="header1">
 											<?php echo htmlspecialchars($templateparams->get('sitedescription'));?>
                                 </span></h1>
-                                <div id="logoheader">
-                                        <img src="<?php echo $this->baseurl ?>/templates/<?php echo $this->template; ?>/images/slide/banner_pagina_principal.png" alt="" title="" />
-                                </div><!-- end logoheader -->
+                                
+                                <div id="blinds-cont">
+									<div id="blinds">
+									</div>
+								</div>
+                                
                                 <div class="comentarios_clientes">
 														<h3>Nuestros clientes dicen</h3>
 															<table class="contentpaneopen">
