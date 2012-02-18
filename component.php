@@ -1,15 +1,15 @@
 <?php
 /**
- * @package                Joomla.Site
- * @subpackage	Templates.sica
- * @copyright        Copyright (C) 2005 - 2012 Open Source Matters, Inc. All rights reserved.
- * @license                GNU General Public License version 2 or later; see LICENSE.txt
+ * @package          Joomla.Site
+ * @subpackage       Templates.sica
+ * @copyright        Copyright (C) 2005 - 2012 SICÁ (tm).
+ * @license          GNU General Public License version 2; see LICENSE.txt
  */
 
 // No direct access.
 defined('_JEXEC') or die;
-
 $color = $this->params->get('templatecolor');
+
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="<?php echo $this->language; ?>" lang="<?php echo $this->language; ?>" dir="<?php echo $this->direction; ?>">
@@ -29,12 +29,11 @@ $color = $this->params->get('templatecolor');
 		endif;
 		foreach($files as $file):
 ?>
-			<link rel="stylesheet" href="<?php echo $file;?>" type="text/css" />
+		<link rel="stylesheet" href="<?php echo $file;?>" type="text/css" />
 <?php
 		endforeach;
 	endif;
 ?>
-
 <?php if($this->direction == 'rtl') : ?>
 	<link rel="stylesheet" href="<?php echo $this->baseurl ?>/templates/<?php echo $this->template; ?>/css/template_rtl.css" type="text/css" />
 <?php endif; ?>

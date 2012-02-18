@@ -3,7 +3,7 @@
  * @package          Joomla.Site
  * @subpackage       Templates.sica
  * @copyright        Copyright (C) 2005 - 2012 SICÁ (tm).
- * @license          GNU General Public License version 2 or later; see LICENSE.txt
+ * @license          GNU General Public License version 2; see LICENSE.txt
  */
 
 // No direct access.
@@ -126,7 +126,7 @@ $images_slides = array(
 <script language="Javascript"  type="text/javascript">
 	window.addEvent('domready', function() {
 //slide section.
-	var slides = <?php echo json_encode($images_slides). ";\n"; ?>;
+	var slides = <?php echo json_encode($images_slides). ";\n"; ?>
 	
 			$('blinds').floom(slides, {
 				slidesBase: '<?php echo $this->baseurl ?>/templates/<?php echo $this->template; ?>/images/slide/',
