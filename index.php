@@ -108,33 +108,37 @@ $doc->addScript($this->baseurl.'/templates/'.$this->template.'/javascript/floom.
                         var smallerTitle='<?php echo JText::_('TPL_SICA_DECREASE_SIZE'); ?>';
                 </script>
 <?php
-$images_slides = array(
-	array(
-		'image' => 'banner_pagina_principal.png',
-		'caption' => 'Trabajo y diseño artesanales.'
-	),
-	array(
-		'image' => 'el-cacho-ninja-katana.png',
-		'caption' => 'Agilidad en el desarrollo web!.'
-	),
-	array(
-		'image' => 'libertad.png',
-		'caption' => 'Tecnologia en libertad tecnologia para todos!.'
-	)
-);
+
+#default imgs 4 the slider
+$default_slide_imgs = array(
+		1 => 'banner_pagina_principal.png',
+		2 => 'el-cacho-ninja-katana.png',
+		3 => 'libertad.png'
+	);
+
+$images_slides = array();
+foreach( $default_slide_imgs as $id=>$default_img){
+	$data=array(
+		'image' => $this->params->get('slide_img'.$id),
+		'caption' => $this->params->get('slide_title'.$id)
+	);
+	if($data['image'] == "")
+		$data['image'] = "templates" . DS .  $this->template . DS . "images" . DS . "slide" . DS . $default_img;
+	$images_slides[] = $data;
+}
+
 ?>
 <script language="Javascript"  type="text/javascript">
 	window.addEvent('domready', function() {
-//slide section.
+	//slide section.
 	var slides = <?php echo json_encode($images_slides). ";\n"; ?>
-	
-			$('blinds').floom(slides, {
-				slidesBase: '<?php echo $this->baseurl ?>/templates/<?php echo $this->template; ?>/images/slide/',
-				sliceFxIn: {
-					left: [10, 0]
-				}
-			});
-//end slide section.
+	$('blinds').floom(slides, {
+		slidesBase: '<?php echo $this->baseurl . DS;  ?>',
+		sliceFxIn: {
+			left: [10, 0]
+		}
+	});
+	//end slide section.
 
   var status = {
     'true': 'open',

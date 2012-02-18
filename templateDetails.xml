@@ -4,10 +4,10 @@
 	<name>sica</name>
 	<creationDate>14 Febrery 2012</creationDate>
 	<author>MundoSICA tm</author>
-	<authorEmail>a.radtke@derauftritt.de</authorEmail>
-	<authorUrl>http://www.der-auftritt.de</authorUrl>
+	<authorEmail>programacion@mundosica.com</authorEmail>
+	<authorUrl>http://www.mundosica.com</authorUrl>
 	<copyright>Copyright (C) 2005 - 2012 sica soluciones integrales,. All rights reserved.</copyright>
-	<license>GNU General Public License version 2 or later; see LICENSE.txt</license>
+	<license>GNU General Public License version 2, see LICENSE.txt</license>
 	<version>2.5.0</version>
 	<description>TPL_SICA_XML_DESCRIPTION</description>
 	<files>
@@ -99,34 +99,37 @@
 					<option value="nature">TPL_SICA_OPTION_NATURE</option>
 					<option value="personal">TPL_SICA_OPTION_PERSONAL</option>
 				</field>
-			</fieldset>	
+			</fieldset><!-- end advanced section -->
+			
+			<!-- slide section -->
 			<fieldset name="SLIDE">
-				<!-- slide section -->
-				<field name="slide_img1" type="media" default=""
-				label="TPL_SICA_FIELD_SLIDE_IMG1" description="TPL_SICA_FIELD_SLIDE_IMG1_DESC" />
-				
-				<field name="slide_title1"  type="text" default=""
+				<!-- slide img 2 -->
+				<field name="slide_title1"  type="text" default="Trabajos y diseños artesanales"
 					label="TPL_SICA_FIELD_SLIDE_TITLE1"
 					description="TPL_SICA_FIELD_SLIDE_TITLE1_DESC"
 					filter="string" />
-				<!-- img 2 -->
-				<field name="slide_img2" type="media" default=""
-				label="TPL_SICA_FIELD_SLIDE_IMG2" description="TPL_SICA_FIELD_SLIDE_IMG2_DESC" />
 				
-				<field name="slide_title2"  type="text" default=""
+				<field name="slide_img1" type="media" default=""
+				label="TPL_SICA_FIELD_SLIDE_IMG1" description="TPL_SICA_FIELD_SLIDE_IMG1_DESC" />
+				
+				<!-- slide img 2 -->
+				<field name="slide_title2"  type="text" default="Agilidad en el desarrollo web!."
 					label="TPL_SICA_FIELD_SLIDE_TITLE2"
 					description="TPL_SICA_FIELD_SLIDE_TITLE2_DESC"
 					filter="string" />
-				<!-- img 3 -->
-				<field name="slide_img3" type="media" default=""
-				label="TPL_SICA_FIELD_SLIDE_IMG3" description="TPL_SICA_FIELD_SLIDE_IMG3_DESC" />
+					
+				<field name="slide_img2" type="media" default=""
+				label="TPL_SICA_FIELD_SLIDE_IMG2" description="TPL_SICA_FIELD_SLIDE_IMG2_DESC" />
 				
-				<field name="slide_title3"  type="text" default=""
+				<!-- slide img 3 -->
+				<field name="slide_title3"  type="text" default="Tecnologia en libertad tecnologia para todos!."
 					label="TPL_SICA_FIELD_SLIDE_TITLE3"
 					description="TPL_SICA_FIELD_SLIDE_TITLE3_DESC"
 					filter="string" />
-				<!-- end slide section -->
-			</fieldset>
-		</fields>
-	</config>
+					
+				<field name="slide_img3" type="media" default=""
+				label="TPL_SICA_FIELD_SLIDE_IMG3" description="TPL_SICA_FIELD_SLIDE_IMG3_DESC" />
+			</fieldset><!-- end slide section -->
+		</fields><!-- end  fields params -->
+	</config><!-- end  config -->
 </extension>
