@@ -223,7 +223,7 @@ foreach( $default_slide_imgs as $id=>$default_img){
 <div id="all">
         <div id="back">
                 <div id="header">
-						<a href="<?php echo $this->baseurl ?>" title='Inicio' id='logoSica'></a>
+						<a href="<?php echo $this->baseurl ?>" title='<?php echo htmlspecialchars($templateparams->get('sitetitle'));?>' id='logoSica'></a>
 								<h1 id="logo">
                                         <?php if ($logo): ?>
                                         <?php endif;?>

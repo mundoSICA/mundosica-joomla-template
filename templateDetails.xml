@@ -71,12 +71,12 @@
 				<field name="logo" type="media"
 					label="TPL_SICA_FIELD_LOGO_LABEL" description="TPL_SICA_FIELD_LOGO_DESC" />
 
-				<field name="sitetitle"  type="text" default=""
+				<field name="sitetitle"  type="text" default="SICÁ"
 					label="TPL_SICA_FIELD_SITETITLE_LABEL"
 					description="TPL_SICA_FIELD_SITETITLE_DESC"
 					filter="string" />
 
-				<field name="sitedescription"  type="text" default=""
+				<field name="sitedescription"  type="text" default="Tecnología en libertad, tecnolgía para todxs!"
 					label="TPL_SICA_FIELD_DESCRIPTION_LABEL"
 					description="TPL_SICA_FIELD_DESCRIPTION_DESC"
 					filter="string" />
